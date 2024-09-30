@@ -423,7 +423,7 @@ function tincanlaunch_export_contents($cm, $baseurl) {
         $file['filesize']     = $fileinfo->get_filesize();
         $fileurl = new moodle_url(
             $baseurl . '/'.$context->id.'/mod_tincanlaunch/package'. $fileinfo->get_filepath().$fileinfo->get_filename());
-        $file['fileurl'] = $fileurl->out();
+        $file['fileurl']      = $fileurl->out();
         $file['timecreated']  = $fileinfo->get_timecreated();
         $file['timemodified'] = $fileinfo->get_timemodified();
         $file['sortorder']    = $fileinfo->get_sortorder();
@@ -514,8 +514,17 @@ function tincanlaunch_process_new_package($tincanlaunch) {
         // Skip if not. (The Moodle admin will need to enter the url manually).
         foreach ($manifest[0]["children"][0]["children"][0]["children"] as $property) {
             if ($property["name"] === "LAUNCH") {
-                $record->tincanlaunchurl = $CFG->wwwroot."/pluginfile.php/".$context->id."/mod_tincanlaunch/"
-                .$manifestfile->get_filearea()."/".$property["tagData"];
+                //$record->tincanlaunchurl = $CFG->wwwroot."/pluginfile.php/".$context->id."/mod_tincanlaunch/"
+                //.$manifestfile->get_filearea()."/".$property["tagData"];
+
+				// parse_url() wil return the scheme if one exists or null if not
+                // On seriously malformed URLs, parse_url() may return false.
+                if (in_array(parse_url($property["tagData"], PHP_URL_SCHEME), array(null, false), true)) {
+                    $record->tincanlaunchurl = $CFG->wwwroot."/pluginfile.php/".$context->id."/mod_tincanlaunch/"
+                    .$manifestfile->get_filearea()."/".$property["tagData"];
+                } else {
+                    $record->tincanlaunchurl = $property["tagData"];
+                }
             }
         }
     }

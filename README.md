@@ -1,7 +1,9 @@
 xAPI Launch Link
 ============
 
-A Moodle plug-in that allows the launch of xAPI content using a separate LRS. 
+A Moodle plug-in that allows the launch of xAPI content using a separate LRS.
+
+This fork of the plugin contains fixes and extra functionality for use with **VR Tourviewer** based eLearning software. 
 
 ## Background
 The plugin is called tincanlaunch because of the original research project called 'Project Tin Can'. At this point in time, the more commonly heard names of Tincan are the 'Experience API' and 'xAPI'. More details can be found here: https://xapi.com/tin-can-experience-api-xapi
