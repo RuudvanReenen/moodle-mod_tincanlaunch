@@ -3,7 +3,8 @@ xAPI Launch Link
 
 A Moodle plug-in that allows the launch of xAPI content using a separate LRS.
 
-This fork of the plugin contains fixes and extra functionality for use with **VR Tourviewer** based eLearning software. 
+This fork of the plugin contains fixes and extra functionality for use with **VR Tourviewer** based eLearning software.
+Source: https://github.com/davidpesce/moodle-mod_tincanlaunch
 
 ## Background
 The plugin is called tincanlaunch because of the original research project called 'Project Tin Can'. At this point in time, the more commonly heard names of Tincan are the 'Experience API' and 'xAPI'. More details can be found here: https://xapi.com/tin-can-experience-api-xapi
@@ -57,11 +58,11 @@ Tracking data from the learning activity is stored in your LRS and can be retrie
 
 
 ### Why doesn't the plugin do x, y, or z?
-If you'd like the plugin to do something, please raise an issue; perhaps someone within the community will develop it for you. If you want to make sure it happens or is done quickly, please email [david.pesce@exputo.com](mailto:david.pesce@exputo.com) if you'd like to hire us.
+If you'd like the plugin to do something, please raise an issue; perhaps someone within the community will develop it for you. If you want to make sure it happens or is done quickly, please email [info@vrtourviewer.com](mailto:info@vrtourviewer.com) if you'd like to hire us.
 
 
 ## Reporting issues
-Please report any issues with this plugin here: https://github.com/davidpesce/moodle-mod_tincanlaunch/issues
+Please report any issues with this plugin here: https://github.com/RuudvanReenen/moodle-mod_tincanlaunch/issues
 Please provide screenshots of your settings (both at the plugin and instance level) and a link to your content. 
 
-The majority of issues are caused by incorrect settings. You can see previously closed issues here: https://github.com/davidpesce/moodle-mod_tincanlaunch/issues?q=is%3Aissue+is%3Aclosed
+The majority of issues are caused by incorrect settings. You can see previously closed issues here: https://github.com/RuudvanReenen/moodle-mod_tincanlaunch/issues?q=is%3Aissue+is%3Aclosed
