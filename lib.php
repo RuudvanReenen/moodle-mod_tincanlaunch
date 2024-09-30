@@ -419,7 +419,7 @@ function tincanlaunch_export_contents($cm, $baseurl) {
         $file['filesize']     = $fileinfo->get_filesize();
         $fileurl = new moodle_url(
             $baseurl . '/'.$context->id.'/mod_tincanlaunch/package'. $fileinfo->get_filepath().$fileinfo->get_filename());
-        $file['fileurl']      = $fileurl;
+        $file['fileurl'] = $fileurl->out();
         $file['timecreated']  = $fileinfo->get_timecreated();
         $file['timemodified'] = $fileinfo->get_timemodified();
         $file['sortorder']    = $fileinfo->get_sortorder();
