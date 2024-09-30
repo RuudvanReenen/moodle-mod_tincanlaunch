@@ -185,6 +185,10 @@ function tincanlaunch_get_coursemodule_info($coursemodule) {
         // Convert intro to html. Do not filter cached version, filters run at display time.
         $result->content = format_module_intro('tincanlaunch', $tincanlaunch, $coursemodule->id, false);
     }
+	
+	// Set the additional data fields.
+	$result->customdata['tincanlaunchurl'] = $tincanlaunch->tincanlaunchurl;
+	$result->customdata['tincanactivityid'] = $tincanlaunch->tincanactivityid;
 
     // Populate the custom completion rules as key => value pairs, but only if the completion mode is 'automatic'.
     if ($coursemodule->completion == COMPLETION_TRACKING_AUTOMATIC) {
