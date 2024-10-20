@@ -330,6 +330,17 @@ function tincanlaunch_get_file_areas($course, $cm, $context) {
 function tincanlaunch_get_file_info($browser, $areas, $context, $filearea, $filepath, $filename) {
     global $CFG;
 
+    // Ensure $context is a proper context object
+    if (!($context instanceof context)) {
+        // Check if we can retrieve the context instance for the module
+        if (isset($context->id)) {
+            $context = context_module::instance($context->id);
+        } else {
+            // If context ID is not set, return null as it's not valid for our case
+            return null;
+        }
+    }
+	
     if (!has_capability('moodle/course:managefiles', $context)) {
         return null;
     }
